@@ -1,31 +1,31 @@
-const { Thought, User } = require('../models');
+const { Thought, User } = require("../models");
 
 const thoughtController = {
   // Get all thoughts
   getThoughts(req, res) {
     Thought.find()
-    .sort({ createdAt: -1 })
-    .then((dbThoughtData) => {
-      res.json(dbThoughtData);
-    })
+      .sort({ createdAt: -1 })
+      .then((dbThoughtData) => {
+        res.json(dbThoughtData);
+      })
       .catch((err) => {
         res.status(500).json(err);
-    });
+      });
   },
 
   // Get a thought
   getSingleThought(req, res) {
     Thought.findOne({ _id: req.params.thoughtId })
-    .then((dbThoughtData) => {
-      if (!dbThoughtData) {
-          return res.status(404).json({ message: 'No thought with that ID' });
-      }
-       res.json(dbThoughtData);
-    })
+      .then((dbThoughtData) => {
+        if (!dbThoughtData) {
+          return res.status(404).json({ message: "No thought with that ID" });
+        }
+        res.json(dbThoughtData);
+      })
       .catch((err) => {
         res.status(500).json(err);
       });
-    },
+  },
 
   // Create a thought
   createThought(req, res) {
@@ -39,7 +39,11 @@ const thoughtController = {
       })
       .then((dbUserData) => {
         if (!dbUserData) {
-          return res.status(404).json({ message: "Thought created, but there isn't a User with this ID." });
+          return res
+            .status(404)
+            .json({
+              message: "Thought created, but there isn't a User with this ID.",
+            });
         }
         res.json({ message: "Sucessfully created Thought" });
       })
@@ -66,14 +70,17 @@ const thoughtController = {
       .then((dbUserData) => {
         if (!dbUserData) {
           return res
-            .status(404).json({ message: "Thought created but there isn't a User with this ID." });
+            .status(404)
+            .json({
+              message: "Thought created but there isn't a User with this ID.",
+            });
         }
         res.json({ message: "Sucessfully deleted Thought." });
       })
       .catch((err) => {
         res.status(500).json(err);
       });
-    },
+  },
 
   // Update a thought
   updateThought(req, res) {
@@ -82,15 +89,15 @@ const thoughtController = {
       { $set: req.body },
       { runValidators: true, new: true }
     )
-    .then((dbThoughtData) => {
-      if (!dbThoughtData) {
-        return res.status(404).json({ message: "No thought with this id!" });
-      }
-      res.json(dbThoughtData);
-    })
-    .catch((err) => {
-      res.status(500).json(err);
-    });
+      .then((dbThoughtData) => {
+        if (!dbThoughtData) {
+          return res.status(404).json({ message: "No thought with this id!" });
+        }
+        res.json(dbThoughtData);
+      })
+      .catch((err) => {
+        res.status(500).json(err);
+      });
   },
 
   // Add a reaction to a thought
@@ -109,7 +116,7 @@ const thoughtController = {
       .catch((err) => {
         res.status(500).json(err);
       });
-    },
+  },
   // Remove reaction from a thought
   removeReaction(req, res) {
     Thought.findOneAndUpdate(
@@ -119,15 +126,16 @@ const thoughtController = {
     )
       .then((dbThoughtData) => {
         if (!dbThoughtData) {
-          return res.status(404).json({ message: "There isn't a thought with this ID." });
+          return res
+            .status(404)
+            .json({ message: "There isn't a thought with this ID." });
         }
         res.json(dbThoughtData);
       })
       .catch((err) => {
         res.status(500).json(err);
       });
-    },
-  };
-
+  },
+};
 
 module.exports = thoughtController;
