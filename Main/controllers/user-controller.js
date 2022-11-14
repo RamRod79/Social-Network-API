@@ -1,4 +1,4 @@
-const { Thought, User } = require('../models');
+const { User, Thought } = require('../models');
 
 const userController = {
   // Get all users
@@ -9,7 +9,7 @@ const userController = {
       res.json(dbUserData);
     })
       .catch((err) => {
-        return res.status(500).json(err);
+        res.status(500).json(err);
       });
   },
 
