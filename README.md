@@ -2,7 +2,7 @@
 
 ## Description
 
-A short description explaining the what, why, and how of project "Employee-Tracker":
+A short description explaining the what, why, and how of project "Social Network API":
 
 An API for a social network web application where users can share their thoughts, react to friends’ thoughts, and create a friend list. Used Express.js for routing, a MongoDB database, and the Mongoose ODM. In addition to using the Express.js and Mongoose packages, you may also optionally use a JavaScript date library of your choice or the native JavaScript Date object to format timestamps.
 
@@ -59,9 +59,13 @@ Pulling the GitHub repository from the follwing URL: https://github.com/RamRod79
   Run ```node index.js``` or ```npm start``` in your terminal to satrt.
 
 ## Usage
+Get All Users
 
-![Screenshot of app being used.](./assets/images/Screenshot01.jpg)
-![Screenshot of app being used.](./assets/images/Screenshot02.jpg)
+![Screenshot of app being used.](./assets/images/GetAllUsers.jpg)
+
+Creat A Thought
+
+![Screenshot of app being used.](./assets/images/CreateThought.jpg)
 
 ## Credits
 

@@ -12,7 +12,8 @@ const userSchema = new Schema(
             type: String,
             required: true,
             unique: true,
-            match: [ /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/, 'Must match a valid email address.'],
+            match: [/.+@.+\..+/, 'Must match a valid email address.'],
+            // /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
         },
         thoughts: [
             {
@@ -29,9 +30,9 @@ const userSchema = new Schema(
     },
     {
         toJSON: {
-            virtuals: true
+            virtuals: true,
         },
-        id: false
+        id: false,
     }
 );
 
