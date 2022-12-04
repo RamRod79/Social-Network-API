@@ -46,26 +46,16 @@ Pulling the GitHub repository from the follwing URL: https://github.com/RamRod79
 
 - Run ```npm i``` or ```npm install``` in order to download all the dependencies.
 
-- MySQL instructions to create your tables:
-
-        - Enter ```mysql -u root -p``` in the terminal window.
-        - Enter your mysql password. 
-        - Create database by entering ```CREATE DATABASE employeeTracker_db;``` and enter.
-        - Then enter ```SHOW databases;```.
-        - To use the employees database; enter ```USE employeeTracker_db;```.
-        - In order to use your .sql files enter ```source db/schema.sql;``` and enter, then type ```source db/seeds.sql;``` and enter.
-        - Exit MySQL by entering ```quit;```.
-  
-  Run ```node index.js``` or ```npm start``` in your terminal to satrt.
+- Run ```node watch``` in your terminal to satrt.
 
 ## Usage
 Get All Users
 
-![Screenshot of app being used.](./assets/images/GetAllUsers.jpg)
+![Screenshot of app being used.](./assets/GetAllUsers.jpg)
 
 Creat A Thought
 
-![Screenshot of app being used.](./assets/images/CreateThought.jpg)
+![Screenshot of app being used.](./assets/CreateThought.jpg)
 
 ## Credits
 
@@ -86,7 +76,7 @@ The following licenses have been used in the development of this project:
 
 ## Repo Features
 
-Using this repo can be initiated by running 'npm run Start' in the command terminal after opening the integrated terminal to initiate the program. Using this repo requires express and nodemon, and updated node modules to ensure application runs properly.
+Using this repo can be initiated by running 'npm run Start' in the command terminal after opening the integrated terminal to initiate the program. 
 
 ## How to Contribute
 
@@ -95,7 +85,7 @@ If other developers would like to contribute, you can contact me at armando.rod7
 ## URL
 GitHub: https://github.com/RamRod79/Social-Network-API.git
 
-video: https://drive.google.com/file/
+video: https://drive.google.com/file/d/1S2bBdSeSSYGsEg9_5IGI9jiqEAK-EShM/view
 
 ## Contact Info
 
